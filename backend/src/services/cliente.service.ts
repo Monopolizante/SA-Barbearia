@@ -9,6 +9,14 @@ class ClienteService {
             console.error("Erro:", error)
         }
     }
+    async inativarCliente(idCliente: string){
+        try {
+            const data = pool.query("SELECT * FROM clientes WHERE id_cliente=$1", [idCliente])
+            
+        } catch (error) {
+            console.error("Erro:", error)
+        }
+    }
 }
 
 export const clienteService = new ClienteService()
