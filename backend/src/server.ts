@@ -1,16 +1,13 @@
 import express, {Request, Response} from 'express'
 import { randomUUID } from 'node:crypto'
+import { clienteRouter } from './routes/cliente.route'
 const port = 3000
 const app = express()
 
 
 app.use(express.json())
 
-app.get("/teste-get", (req: Request, res:Response) =>{
-    return res.json({
-        status: "ok"
-    })
-})
+app.use("cliente/:id", clienteRouter)
 
 app.post("/teste-post", (req: Request<object, object, CreateUser>, res:Response) => {
     const name = req.body.name?.trim()
