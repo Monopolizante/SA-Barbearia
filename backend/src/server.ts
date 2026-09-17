@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.json())
 
-app.use("cliente/:id", clienteRouter)
+app.use("/cliente/:id", clienteRouter)
 
 app.post("/teste-post", (req: Request<object, object, CreateUser>, res:Response) => {
     const name = req.body.name?.trim()
