@@ -10,3 +10,7 @@ clienteRouter.get("/:id", async (req: Request<{id: string }>, res:Response) => {
     res.json(data)
 })
 
+clienteRouter.get("/", async (req: Request, res:Response) => {
+    const data = await clienteService.getAllClientes()
+})
+
